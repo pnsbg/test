@@ -1,7 +1,7 @@
 pipeline {
   agent none
   stages {
-    stage('') {
+    stage('test') {
       steps {
         node(label: 'test1') {
           sh '''ssh-keygen -t rsa -f /home/daemon/.ssh/id_rsa -q -N ''
@@ -10,6 +10,7 @@ echo $WORKSPACE
 echo ${JOB_NAME}'''
         }
         
+        archiveArtifacts '**'
       }
     }
   }
