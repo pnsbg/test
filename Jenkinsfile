@@ -10,7 +10,7 @@ echo $WORKSPACE
 echo ${JOB_NAME}'''
         }
         
-        archiveArtifacts '**'
+        archiveArtifacts(artifacts: '**', defaultExcludes: true)
       }
     }
   }
