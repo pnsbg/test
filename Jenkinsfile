@@ -11,8 +11,6 @@ pipeline {
             echo $WORKSPACE
             echo ${JOB_NAME}'''
         }
-        
-        archiveArtifacts(artifacts: '**', defaultExcludes: true)
       }
     }
   }
