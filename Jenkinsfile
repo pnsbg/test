@@ -6,8 +6,8 @@ pipeline {
     stage('test') {
       steps {
           sh '''
-            echo $hostname
-            echo $hostname
+            echo hostname
+            echo hostname
             echo $WORKSPACE
             echo ${JOB_NAME}'''
         }
