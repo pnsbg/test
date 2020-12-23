@@ -3,11 +3,12 @@ pipeline {
   stages {
     stage('test') {
       steps {
-        node(label: 'test1') {
-          sh '''ssh-keygen iiii -t rsa -f /home/daemon/.ssh/id_rsa -q -N ''
-su -c "ssh-keygen -t rsa -f /home/daemon/.ssh/id_rsa -q -N ''" - daemon
-echo $WORKSPACE
-echo ${JOB_NAME}'''
+        node(label: 'master') {
+          sh '''
+            echo $hostname
+            echo $hostname
+            echo $WORKSPACE
+            echo ${JOB_NAME}'''
         }
         
         archiveArtifacts(artifacts: '**', defaultExcludes: true)
