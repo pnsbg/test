@@ -1,5 +1,5 @@
 pipeline {
-  agent none
+  agent any
   stages {
     stage('test') {
       steps {
@@ -7,6 +7,7 @@ pipeline {
           sh '''
             echo $hostname
             echo $hostname
+            echo $WORKSPACE
             echo $WORKSPACE
             echo ${JOB_NAME}'''
         }
