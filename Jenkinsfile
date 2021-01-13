@@ -14,12 +14,14 @@ pipeline {
         STARTED_BY = "${buildUser}"
     }
     options {
-        ansiColor('css')
+        ansiColor('xterm')
     }
     stages {
         stage('make varaible') {
            steps {
              echo "ebati bastuna sam ${PROBA}"
+             def var = "${PROBA}".split(",")[0]
+             echo "dano da stane ${var}"
            }
         }
     }
