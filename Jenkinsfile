@@ -5,7 +5,7 @@ import org.jenkinsci.plugins.workflow.libs.Library
 
 node('Slave01') {
     stage('Test Env') {
-        step('proba') {
+        step {
           echo "Proba VAR ${PROBA}"
           sh 'printenv'
         }
