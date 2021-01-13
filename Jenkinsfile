@@ -12,15 +12,16 @@ pipeline {
     environment {
         SALT_WRAPPER_JOB = "wrappers/salt_execute_wrapper_"
         STARTED_BY = "${buildUser}"
-        VERSION = "First(Split("${PROBA}", " ")).Result"
     }
     
     stages {
         stage('Executing state') {
            steps {
-             echo "Abe palen bastun sam kakvo da pravq ${PROBA}"
-             echo "${STARTED_BY}"
-             echo "${VERSION}"
+             script{
+               def ver = ${PROBA}.split(",")[0]
+               echo "Abe palen bastun sam kakvo da pravq ${PROBA}"
+               echo "${ver}"
+             }
            }
         }
     }
