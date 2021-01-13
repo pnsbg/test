@@ -16,9 +16,9 @@ pipeline {
     
     stages {
         stage('Executing state') {
-          step {
-            echo "Abe palen bastun sam kakvo da pravq ${PROBA}"
-          }
+           steps {
+             echo "Abe palen bastun sam kakvo da pravq ${PROBA}"
+           }
         }
     }
 }  
