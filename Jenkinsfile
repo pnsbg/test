@@ -13,15 +13,14 @@ pipeline {
         SALT_WRAPPER_JOB = "wrappers/salt_execute_wrapper_"
         STARTED_BY = "${buildUser}"
     }
-    
+    ansiColor('xterm') {
+    // some block
+    }
     stages {
         stage('make varaible') {
            steps {
-             scrip {
-               echo "Abe palen bastun sam kakvo da pravq ${PROBA}"
-               echo " asasadsafdsfdsfdsfdsfdsfsd ${STARTED_BY}"
-             }
+             echo "ebati bastuna sam ${PROBA}"
            }
         }
     }
-}  
+}
