@@ -14,7 +14,7 @@ pipeline {
         STARTED_BY = "${buildUser}"
     }
     options {
-        ansiColor('xterm')
+        ansiColor('css')
     }
     stages {
         stage('make varaible') {
