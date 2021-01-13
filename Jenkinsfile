@@ -12,7 +12,7 @@ pipeline {
       ENVIRONMENTS = "${SALTENV + PILLARENV}"
       HOSTNAME =  "${HOSTNAME == null ? "\\*" : HOSTNAME}"
   }
-
+te
   stages {
     stage('test') {
       steps {
