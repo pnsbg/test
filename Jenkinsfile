@@ -13,8 +13,8 @@ pipeline {
         SALT_WRAPPER_JOB = "wrappers/salt_execute_wrapper_"
         STARTED_BY = "${buildUser}"
     }
-    ansiColor('xterm') {
-    // some block
+    options {
+        ansiColor('xterm')
     }
     stages {
         stage('make varaible') {
