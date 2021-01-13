@@ -17,8 +17,8 @@ pipeline {
     stages {
         stage('Executing state') {
            steps {
-             script{
-               def ver = ${PROBA}.split(",")[0]
+             script {
+               def ver = ${PROBA }.split(",")[0]
                echo "Abe palen bastun sam kakvo da pravq ${PROBA}"
                echo "${ver}"
              }
