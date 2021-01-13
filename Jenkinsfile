@@ -15,10 +15,10 @@ pipeline {
     }
     
     stages {
-        stage('Executing state') {
+        stage('make varaible') {
            steps {
              scrip {
-               def ver = "${PROBA}".split(",")
+               ver = "${PROBA}".split(",")
                echo "Abe palen bastun sam kakvo da pravq ${PROBA}"
                echo "${ver}"
              }
