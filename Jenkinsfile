@@ -11,9 +11,16 @@ pipeline {
     stages {
         stage('Run conteiner') {
            steps {
-               sh ("/usr/local/bin/docker run  -v ${WORKSPACE}:/app dge_report:latest write_all ${sprint} --version=${version}")
+               sh ("/usr/local/bin/docker run --name jira -v ${WORKSPACE}:/app dge_report:latest write_all ${sprint} --version=${version}")
            }
         }
+    stage('If pip was aborted') {
+      if (currentBuild.rawBuild.result = Result.ABORTED) {
+        steps{
+          sh ("docker rm jira -f")
+        }
+      }
+    }        
     }
     post {
       always {
