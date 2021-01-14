@@ -11,6 +11,7 @@ pipeline {
     stages {
         stage('Run conteiner') {
            steps {
+               sh ("/usr/local/bin/docker rm jira -f")
                sh ("/usr/local/bin/docker run --name jira -v ${WORKSPACE}:/app dge_report:latest write_all ${sprint} --version=${version}")
            }
         }
