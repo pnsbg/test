@@ -17,7 +17,7 @@ pipeline {
     }
     post {
       always {
-        archiveArtifacts artifacts: '*.xlsx', fingerprint: true
+        archiveArtifacts artifacts: '/Users/slabapav/Rabota/new/rel_ver_tar/*.xlsx', fingerprint: true
       }
     }
 }
