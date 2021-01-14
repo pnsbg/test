@@ -9,26 +9,19 @@ pipeline {
     agent {
         label "QA Worker"
     }
-
-    environment {
-        SALT_WRAPPER_JOB = "wrappers/salt_execute_wrapper_"
-        STARTED_BY = "${buildUser}"
-    }
     options {
         ansiColor('xterm')
     }
     stages {
-        stage('make varaible') {
+        stage('Run conteiner') {
            steps {
-               echo "ebati bastuna sam ${PROBA}"
-               sh ("echo \"dano da stane version  ${version}\" > VER.txt")
-               sh ("echo \"dano da stane sprint  ${sprint}\" > SPR.txt")
+               sh ("docker run  -v ${WORKSPACE}:/app dge_report:latest write_all ${sprint} --version=${version}")
            }
         }
     }
     post {
       always {
-        archiveArtifacts artifacts: '*.txt', fingerprint: true
+        archiveArtifacts artifacts: 'rel_ver_tar*.txt', fingerprint: true
       }
     }
 }
