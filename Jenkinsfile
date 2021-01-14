@@ -21,8 +21,8 @@ pipeline {
         stage('make varaible') {
            steps {
                echo "ebati bastuna sam ${PROBA}"
-               echo "dano da stane version  ${version}"
-               echo "dano da stane sprint  ${sprint}"
+               sh('echo "dano da stane version  ${version}"> VER.txt')
+               sh('echo "dano da stane sprint  ${sprint}" > SPR.txt')
            }
         }
     }
