@@ -12,7 +12,7 @@ pipeline {
     environment {
         SALT_WRAPPER_JOB = "wrappers/salt_execute_wrapper_"
         STARTED_BY = "${buildUser}"
-        var = "${PROBA}"
+        def (version, sprint) = '${PROBA}'.split(",")
     }
     options {
         ansiColor('xterm')
@@ -21,7 +21,7 @@ pipeline {
         stage('make varaible') {
            steps {
              echo "ebati bastuna sam ${PROBA}"
-             echo "dano da stane ${var}"
+             echo "dano da stane ${varsion}"
            }
         }
     }
