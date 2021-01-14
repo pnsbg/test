@@ -20,10 +20,9 @@ pipeline {
     stages {
         stage('make varaible') {
            steps {
-             script{
                echo "ebati bastuna sam ${PROBA}"
-               echo "dano da stane ${version}"
-             }
+               echo "dano da stane version  ${version}"
+               echo "dano da stane sprint  ${sprint}"
            }
         }
     }
