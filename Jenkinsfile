@@ -11,13 +11,13 @@ pipeline {
     stages {
         stage('Run conteiner') {
            steps {
-               sh ("/usr/local/bin/docker run  -v /Users/slabapav/Rabota/new:/app dge_report:latest write_all ${sprint} --version=${version}")
+               sh ("/usr/local/bin/docker run  -v ${WORKSPACE}:/app dge_report:latest write_all ${sprint} --version=${version}")
            }
         }
     }
     post {
       always {
-        archiveArtifacts artifacts: '/Users/slabapav/Rabota/new/rel_ver_tar/*.xlsx', fingerprint: true
+        archiveArtifacts artifacts: '*.xlsx', fingerprint: true
       }
     }
 }
