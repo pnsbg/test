@@ -26,4 +26,9 @@ pipeline {
            }
         }
     }
+    post {
+      always {
+        archiveArtifacts artifacts: '*.txt', fingerprint: true
+      }
+    }
 }
