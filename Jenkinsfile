@@ -7,7 +7,7 @@ def (version, sprint) = "${PROBA}".split(",")
 
 pipeline {
     agent {
-        label "QA Worker"
+        label "master"
     }
     options {
         ansiColor('xterm')
@@ -15,13 +15,13 @@ pipeline {
     stages {
         stage('Run conteiner') {
            steps {
-               sh ("docker run  -v ${WORKSPACE}:/app dge_report:latest write_all ${sprint} --version=${version}")
+               sh ("docker run  -v /Users/slabapav/Rabota/new:/app dge_report:latest write_all ${sprint} --version=${version}")
            }
         }
     }
     post {
       always {
-        archiveArtifacts artifacts: 'rel_ver_tar*.txt', fingerprint: true
+        archiveArtifacts artifacts: 'rel_ver_tar/*.xlsx', fingerprint: true
       }
     }
 }
