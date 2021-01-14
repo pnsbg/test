@@ -11,7 +11,7 @@ pipeline {
     stages {
         stage('Run conteiner') {
            steps {
-               sh ("docker run  -v /Users/slabapav/Rabota/new:/app dge_report:latest write_all ${sprint} --version=${version}")
+               sh ("/usr/local/bin/docke run  -v /Users/slabapav/Rabota/new:/app dge_report:latest write_all ${sprint} --version=${version}")
            }
         }
     }
