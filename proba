@@ -1,3 +1,6 @@
+#!/usr/bin/env groovy
+
+import org.jenkinsci.plugins.workflow.libs.Library
 pipeline {
    agent { label 'master' }
    stages {
@@ -8,18 +11,15 @@ pipeline {
                echo "OK"
                //input(
                //    message: 'Was this successful?', parameters: [
-               //   [$class: 'BooleanParameterDefinition', defaultValue: true, description: '',
-name: 'Please confirm you agree with this']
+               //   [$class: 'BooleanParameterDefinition', defaultValue: true, description: '',name: 'Please confirm you agree with this']
                //])
  
        /*
                script {
                    res = input(
                        message: 'Was this successful?', parameters: [
-                       [$class: 'BooleanParameterDefinition', defaultValue: false, description:
-'', name: 'Apple'],
-                       [$class: 'BooleanParameterDefinition', defaultValue: false, description:
-'', name: 'Banana']
+                       [$class: 'BooleanParameterDefinition', defaultValue: false, description:'', name: 'Apple'],
+                       [$class: 'BooleanParameterDefinition', defaultValue: false, description:'', name: 'Banana']
                    ])
                                       print(res)
                }
@@ -29,8 +29,7 @@ name: 'Please confirm you agree with this']
                    parameters = []
                    values.each {
                        echo it
-                       parameters.add( [$class: 'BooleanParameterDefinition', defaultValue:
-false, description: '', name: it ] )
+                       parameters.add( [$class: 'BooleanParameterDefinition', defaultValue:false, description: '', name: it ] )
                    }
  
                    res = input(
