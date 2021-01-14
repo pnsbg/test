@@ -2,6 +2,7 @@
 
 import org.jenkinsci.plugins.workflow.libs.Library
 
+def (version, sprint) = "${PROBA}".split(",")
 
 
 pipeline {
@@ -12,7 +13,6 @@ pipeline {
     environment {
         SALT_WRAPPER_JOB = "wrappers/salt_execute_wrapper_"
         STARTED_BY = "${buildUser}"
-        def (version, sprint) = '${PROBA}'.split(",")
     }
     options {
         ansiColor('xterm')
@@ -20,8 +20,10 @@ pipeline {
     stages {
         stage('make varaible') {
            steps {
-             echo "ebati bastuna sam ${PROBA}"
-             echo "dano da stane ${varsion}"
+             script{
+               echo "ebati bastuna sam ${PROBA}"
+               echo "dano da stane ${version}"
+             }
            }
         }
     }
