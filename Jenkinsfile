@@ -20,7 +20,7 @@ pipeline {
         archiveArtifacts artifacts: 'rel_ver_tar/*.xlsx', fingerprint: true
       }
       aborted {
-        sh ("docker rm jira -f")
+        sh ("/usr/local/bin/docker rm jira -f")
       }
     }
 }
