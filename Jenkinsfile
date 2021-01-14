@@ -19,8 +19,6 @@ pipeline {
     post {
       always {
         archiveArtifacts artifacts: 'rel_ver_tar/*.xlsx', fingerprint: true
-      }
-      aborted {
         sh ("/usr/local/bin/docker rm jira -f")
       }
     }
