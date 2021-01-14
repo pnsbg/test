@@ -1,16 +1,12 @@
 #!/usr/bin/env groovy
 
 import org.jenkinsci.plugins.workflow.libs.Library
-
 def (version, sprint) = "${PROBA}".split(",")
 
 
 pipeline {
     agent {
         label "master"
-    }
-    options {
-        ansiColor('xterm')
     }
     stages {
         stage('Run conteiner') {
