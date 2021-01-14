@@ -15,7 +15,7 @@ pipeline {
            }
         }
     stage('If pip was aborted') {
-      if (currentBuild.rawBuild.result = Result.ABORTED) {
+      if (currentBuild.rawBuild.result == Result.ABORTED) {
         steps{
           sh ("docker rm jira -f")
         }
