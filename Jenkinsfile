@@ -17,7 +17,7 @@ pipeline {
     }
     post {
       always {
-        archiveArtifacts artifacts: '**/*.xlsx', fingerprint: true
+        archiveArtifacts artifacts: 'rel_ver_tar/*.xlsx', fingerprint: true
       }
     }
 }
