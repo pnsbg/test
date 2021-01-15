@@ -7,23 +7,7 @@ pipeline {
        stage('build') {
            steps {
                echo "Hello World!"
-               //input()
                echo "OK"
-               //input(
-               //    message: 'Was this ppasdsadsadsadfdksfkdsfskdhfsdhfhksadfkhsakf successful?', parameters: [
-               //   [$class: 'BooleanParameterDefinition', defaultValue: true, description: '',name: 'Please confirm you agree with this']
-               //])
- 
-       /*
-               script {
-                   res = input(
-                       message: 'Was this successful?', parameters: [
-                       [$class: 'BooleanParameterDefinition', defaultValue: false, description:'', name: 'Apple'],
-                       [$class: 'BooleanParameterDefinition', defaultValue: false, description:'', name: 'Banana']
-                   ])
-                                      print(res)
-               }
-*/
                script {
                    values = ['Apple', 'Banana', 'Peach']
                    parameters = []
@@ -37,14 +21,6 @@ pipeline {
                    )
                                                          print(res)
                }
- 
- 
-               //                input(
-//                    message: 'What now?', parameters: [
-//                        [$class: 'AppDetectorParamaterDefinition')
-//                ])
-                                  //echo result
-                              // python scripts/aws_instances.py --what selftest --command start
            }
        }
    }
