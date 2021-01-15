@@ -10,7 +10,7 @@ pipeline {
                //input()
                echo "OK"
                //input(
-               //    message: 'Was this successful?', parameters: [
+               //    message: 'Was this ppasdsadsadsadfdksfkdsfskdhfsdhfhksadfkhsakf successful?', parameters: [
                //   [$class: 'BooleanParameterDefinition', defaultValue: true, description: '',name: 'Please confirm you agree with this']
                //])
  
