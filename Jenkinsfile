@@ -13,10 +13,10 @@ pipeline {
        stage('write') {
            steps {
                script {
-                   def data = '''old version: 0.3746.1496 
+                   def data = """old version: 0.3746.1496 
                                  
                                          ATS:
-                                                  ATS (release-pokerstars-0.3746.1496.2_20201113_1217.tar.gz): ver "{version}"'''
+                                                  ATS (rel_ver): ver ${version}""" 
                    writeFile(file: 'zorg.txt', text: data)
                    sh "ls -l"
               }
