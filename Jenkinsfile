@@ -2,7 +2,7 @@
 
 
 import org.jenkinsci.plugins.workflow.libs.Library
-def (version, sprint) = "${PROBA}".split(",")
+def (old, version, sprint) = "${PROBA}".split(",")
 
 
 pipeline {
@@ -13,7 +13,7 @@ pipeline {
        stage('write') {
            steps {
                script {
-                   def data = """old version: 0.3746.1496 
+                   def data = """old version: ${old} 
                                  
                                          ATS:
                                                   ATS (rel_ver): ver ${version}""" 
