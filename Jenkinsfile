@@ -3,7 +3,12 @@
 
 import org.jenkinsci.plugins.workflow.libs.Library
 def (old, version, sprint) = "${PROBA}".split(",")
-
+Document doc = Jsoup.connect("https://artifactory.k8s.starsops.com/artifactory/devops-amelco-releases/ats").userAgent("Mozilla").get();
+for (Element e: doc.select("a.question-hyperlink")) {
+    System.out.println(e.attr("abs:href"));
+    System.out.println(e.text());
+    System.out.println();
+}
 
 pipeline {
     agent {
