@@ -17,7 +17,7 @@ pipeline {
                                  
                                          ATS:
                                                   ATS (rel_ver): ver ${version}""" 
-                   writeFile(file: 'zorg.txt', text: data)
+                   writeFile(file: 'manifest.txt', text: data)
                    sh "ls -l"
               }
           }
